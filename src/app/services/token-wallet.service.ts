@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const API_URL = 'http://localhost:7158/api/Users';
+const API_URL = 'http://localhost:7158/api/TokenWallets';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class TokenWalletService {
 
   constructor(private http: HttpClient) { }
 
@@ -19,12 +19,12 @@ export class UserService {
     return this.http.get(API_URL + '/' + id, { responseType: 'text' });
   }
 
-  postUser(user : User): Observable<any> {
-    return this.http.post<User>(API_URL, user);
+  postUser(tokenWallet : TokenWallet): Observable<any> {
+    return this.http.post<TokenWallet>(API_URL, tokenWallet);
   }
 
-  UpdateUser(id: number, user : User): Observable<any> {
-    return this.http.put<User>(API_URL + '/' + id, user);
+  UpdateUser(id: number, tokenWallet : TokenWallet): Observable<any> {
+    return this.http.put<TokenWallet>(API_URL + '/' + id, tokenWallet);
   }
 
   DeleteUser(id: number): Observable<any>{
