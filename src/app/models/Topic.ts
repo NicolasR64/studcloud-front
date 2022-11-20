@@ -4,5 +4,5 @@ class Topic{
   Created!: Date;
   TopicUserId!: number;
   User!: User;
-  Comments!: Comment[];
+  Comments!: Commentary[];
 }
