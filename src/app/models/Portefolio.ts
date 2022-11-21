@@ -1,4 +1,6 @@
-class Portefolio{
+import { User } from "./User";
+
+export class Portefolio{
   PortefolioId!: number;
   Name!: string;
   LinkURL!: string;
@@ -6,3 +8,4 @@ class Portefolio{
   CurrentUserId!: number;
   User!: User;
 }
+

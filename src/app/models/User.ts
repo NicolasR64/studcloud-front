@@ -1,4 +1,10 @@
-class User{
+import { Commentary } from "./Commentary";
+import { Portefolio } from "./Portefolio";
+import { PrivateGroup } from "./PrivateGroup";
+import { PrivateMessage } from "./PrivateMessage";
+import { Topic } from "./Topic";
+
+export class User{
   Id!: number;
   Name!:  string;
   Firstname!: string;
@@ -6,10 +12,10 @@ class User{
   Password!: string;
   Email!: string;
   Phone!: string;
-  Birthday!: Date;
-  Portefolios!: Portefolio[];
-  Topics!: Topic[];
-  Comments!: Commentary[];
-  PrivateGroups!: PrivateGroup[];
-  PrivateMessages!: PrivateMessage[];
+  Birthday!: Date|null;
+  Portefolios!: Portefolio[]|null;
+  Topics!: Topic[]|null;
+  Comments!: Commentary[]|null;
+  PrivateGroups!: PrivateGroup[]|null;
+  PrivateMessages!: PrivateMessage[]|null;
 }
