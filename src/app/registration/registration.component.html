@@ -1,0 +1,20 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>pseudo</mat-label>
+      <input matInput placeholder="Votre nom de famille" formControlName="nickname" placeholder="you're last name" required>
+    <mat-error *ngIf="this.registrationForm.get('nickname')?.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput[type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field> 
+  </p>
+  <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+</form>
