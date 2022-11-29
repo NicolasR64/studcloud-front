@@ -1,0 +1,12 @@
+.form-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    padding: 0 25vw;
+}
+
+mat-card{
+    margin-bottom: 25px;
+}

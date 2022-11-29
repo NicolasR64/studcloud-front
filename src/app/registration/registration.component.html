@@ -1,20 +1,77 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-  <p>
-    <mat-form-field appearance="fill">
-      <mat-label>pseudo</mat-label>
-      <input matInput placeholder="Votre nom de famille" formControlName="nickname" placeholder="you're last name" required>
-    <mat-error *ngIf="this.registrationForm.get('nickname')?.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Mot de passe</mat-label>
-      <input matInput[type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field> 
-  </p>
-  <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
-</form>
+<div class="container">
+  <mat-card class="form-card" [formGroup]="registrationForm">
+    <mat-card-header>
+      <mat-card-title>Enregistrement</mat-card-title>
+    </mat-card-header>
+    <mat-card>
+      <mat-card-subtitle>Informations personnel</mat-card-subtitle>
+      <div class="form-row">
+        <mat-form-field hintLabel="De 2 à 50 caractères" appearance="fill">
+          <mat-label>Nom *</mat-label>
+          <input matInput #lastname formControlName="Name" placeholder="Nom"/>
+          <mat-hint align="end" [style]="((lastname.value.length > 50) || (lastname.value.length < 2)) ? 'color: red;' : 'color: unset' ">{{lastname.value.length}}/50</mat-hint>
+        </mat-form-field>
+        <mat-form-field hintLabel="De 2 à 50 caractères" appearance="fill">
+          <mat-label>Prénom *</mat-label>
+          <input matInput #firstname formControlName="Firstname" placeholder="Prénom"/>
+          <mat-hint align="end" [style]="((firstname.value.length > 50) || (firstname.value.length < 2)) ? 'color: red;' : 'color: unset' ">{{firstname.value.length}}/50</mat-hint>
+        </mat-form-field>
+        <mat-form-field hintLabel="De 2 à 50 caractères" appearance="fill">
+          <mat-label>pseudo *</mat-label>
+          <input matInput #nickname formControlName="Nickname" placeholder="Pseudo"/>
+          <mat-hint align="end" [style]="((nickname.value.length > 50) || (nickname.value.length < 2)) ? 'color: red;' : 'color: unset' ">{{nickname.value.length}}/50</mat-hint>
+        </mat-form-field>
+      </div>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput formControlName="Birthday" [matDatepicker]="picker" [max]="maxDate" [min]="minDate" >
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-subtitle>Mot de passe</mat-card-subtitle>
+      <div class="form-row">
+        <mat-form-field hintLabel="De 8 à 50 caractères" appearance="fill">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput #password formControlName="Password"  [type]="hide ? 'password' : 'text'" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-hint align="end" [style]="((password.value.length > 50) || (password.value.length < 8)) ? 'color: red;' : 'color: unset' ">{{password.value.length}}/50</mat-hint>
+        </mat-form-field>
+        <mat-form-field hintLabel="De 8 à 50 caractères" appearance="fill">
+          <mat-label>Confirmation mot de passe</mat-label>
+          <input matInput #confirmationPassword formControlName="ConfirmationPassword"  [type]="hide ? 'password' : 'text'" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-hint align="end" [style]="((confirmationPassword.value.length > 50) || (confirmationPassword.value.length < 8)) ? 'color: red;' : 'color: unset' ">{{confirmationPassword.value.length}}/50</mat-hint>
+          <mat-error>{{ getErrorConfirmationPassword() }}</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <mat-card>
+      <mat-card-subtitle>Informations de contact :</mat-card-subtitle>
+      <div class="form-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="Email" />
+          <mat-error>{{ getErrorEmail() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="Phone" />
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-error>{{ getErrorEmail() }}</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()" [disabled]="!registrationForm.valid">Submit</button>
+  </mat-card>
+</div>
+
