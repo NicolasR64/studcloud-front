@@ -1,0 +1,23 @@
+<div class="container">
+
+    <mat-card class="form-card" [formGroup]="signInForm">
+        <mat-card-title>Connection</mat-card-title>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Pseudo</mat-label>
+                <input matInput formControlName="Nickname" placeholder="Pseudo">
+            </mat-form-field>
+            <mat-form-field style="margin-left: 50px" appearance="fill">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput  formControlName="Password"  [type]="hide ? 'password' : 'text'" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <br>
+        <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()" [disabled]="!signInForm.valid">
+            Envoyer
+        </button>
+    </mat-card>
+</div>
