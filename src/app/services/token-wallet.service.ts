@@ -12,23 +12,23 @@ export class TokenWalletService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUsers(): Observable<any> {
+  getAllTokenWallet(): Observable<any> {
     return this.http.get(API_URL , { responseType: 'text' });
   }
 
-  getUserById(id: number): Observable<any> {
+  getTokenWalletById(id: number): Observable<any> {
     return this.http.get(API_URL + '/' + id, { responseType: 'text' });
   }
 
-  postUser(tokenWallet : TokenWallet): Observable<any> {
+  postTokenWallet(tokenWallet : TokenWallet): Observable<any> {
     return this.http.post<TokenWallet>(API_URL, tokenWallet);
   }
 
-  UpdateUser(id: number, tokenWallet : TokenWallet): Observable<any> {
+  UpdateTokenWallet(id: number, tokenWallet : TokenWallet): Observable<any> {
     return this.http.put<TokenWallet>(API_URL + '/' + id, tokenWallet);
   }
 
-  DeleteUser(id: number): Observable<any>{
+  DeleteTokenWallet(id: number): Observable<any>{
     return this.http.delete(API_URL + '/' + id);
   }
 }
