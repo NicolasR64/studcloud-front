@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TokenWallet } from '../models/TokenWallet';
 
 const API_URL = 'http://localhost:7158/api/TokenWallets';
 

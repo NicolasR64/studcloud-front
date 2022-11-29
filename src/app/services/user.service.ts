@@ -1,8 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Commentary } from '../models/Commentary';
+import { Portefolio } from '../models/Portefolio';
+import { PrivateGroup } from '../models/PrivateGroup';
+import { PrivateMessage } from '../models/PrivateMessage';
+import { Topic } from '../models/Topic';
+import { User } from '../models/User';
 
-const API_URL = 'http://localhost:7158/api/Users';
+const API_URL = 'https://localhost:7238/api/Users';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +25,12 @@ export class UserService {
     return this.http.get(API_URL + '/' + id, { responseType: 'text' });
   }
 
-  postUser(user : User): Observable<any> {
-    return this.http.post<User>(API_URL, user);
+  postUser(formValue : {  Id: number, Name:  string, Firstname: string, Nickname: string, Password: string, Email: string, Phone: string, Birthday: Date|null, Portefolios: Portefolio[]|null, Topics: Topic[]|null, Comments: Commentary[]|null,   PrivateGroups: PrivateGroup[]|null, PrivateMessages: PrivateMessage[]|null }): void {
+    const user: User = {
+      ...formValue
+    };
+    console.log('post user : ' + user);
+    this.http.post<User>(API_URL, user).subscribe();
   }
 
   UpdateUser(id: number, user : User): Observable<any> {
