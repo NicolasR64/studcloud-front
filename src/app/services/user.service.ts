@@ -8,7 +8,7 @@ import { PrivateMessage } from '../models/PrivateMessage';
 import { Topic } from '../models/Topic';
 import { User } from '../models/User';
 
-const API_URL = 'https://localhost:7238/api/Users';
+const API_URL = 'https://localhost:7158/api/Users';
 
 @Injectable({
   providedIn: 'root'
@@ -17,27 +17,31 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUsers(): Observable<any> {
-    return this.http.get(API_URL , { responseType: 'text' });
+  getAllUsers(){
+    console.log('triggered: getAllUser()');
+    this.http.get(API_URL , { responseType: 'text' }).subscribe();
   }
 
-  getUserById(id: number): Observable<any> {
-    return this.http.get(API_URL + '/' + id, { responseType: 'text' });
+  getUserById(id: number){
+    console.log('triggered: getUserById()');
+    this.http.get(API_URL + '/' + id, { responseType: 'text' }).subscribe();
   }
 
   postUser(formValue : {  Id: number, Name:  string, Firstname: string, Nickname: string, Password: string, Email: string, Phone: string, Birthday: Date|null, Portefolios: Portefolio[]|null, Topics: Topic[]|null, Comments: Commentary[]|null,   PrivateGroups: PrivateGroup[]|null, PrivateMessages: PrivateMessage[]|null }): void {
     const user: User = {
       ...formValue
     };
-    console.log('post user : ' + user);
+    console.log('triggered: postUser : ' + user);
     this.http.post<User>(API_URL, user).subscribe();
   }
 
-  UpdateUser(id: number, user : User): Observable<any> {
-    return this.http.put<User>(API_URL + '/' + id, user);
+  UpdateUser(id: number, user : User): void{
+    console.log('triggered : putUser : ' + user);
+    this.http.put<User>(API_URL + '/' + id, user).subscribe();;
   }
 
-  DeleteUser(id: number): Observable<any>{
-    return this.http.delete(API_URL + '/' + id);
+  DeleteUser(id: number){
+    console.log('triggered : deleteUser ');
+    this.http.delete(API_URL + '/' + id).subscribe();
   }
 }

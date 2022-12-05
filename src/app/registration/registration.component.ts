@@ -96,7 +96,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit(){
     console.log(this.registrationForm.value);
     this.userService.postUser(this.registrationForm.value);
-    this.router.navigateByUrl('/singIn');
+    this.router.navigateByUrl('/signIn');
   };
 
 }
