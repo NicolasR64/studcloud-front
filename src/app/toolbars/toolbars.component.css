@@ -1,0 +1,57 @@
+/* NavBar */
+
+.navbar{
+    position: fixed;
+    z-index: 100;
+}
+
+.sidenav-container .title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidenav-links-container .title{
+    margin-bottom: 25px;
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+span{
+    margin-left: 25px;
+}
+
+.sidenav-links-container{
+    display: flex;
+    flex-flow: column nowrap;
+    min-width: 200px;
+    padding: 25px 25px 0 0;
+}
+
+.sidenav-links-container .sidenav-link{
+    margin-bottom: 15px;
+}
+
+.spacer-content{
+    width: 100%;
+    height: 70px;
+}
+
+@media screen and (min-width: 700px){
+    #drawerToggle-Icon{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+    #drawerToggle-Icon{
+        display: block;
+    }
+    
+    .navbar-link{
+        display: none;
+    }
+
+}

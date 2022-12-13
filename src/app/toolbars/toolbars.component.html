@@ -1,0 +1,40 @@
+<mat-drawer-container class="sidenav-container">
+    <mat-drawer #drawer  mode="over" closed>
+      <div class="sidenav-links-container">
+        <span class="title">FreshBread</span>
+        <span class="spacer"></span>
+        <span class="sidenav-link"><a mat-button [routerLink]="['/home']">Home</a></span>
+        <span class="sidenav-link" *ngIf="connected">
+          <a mat-button [routerLink]="['/cart  ']">Mes commandes</a>
+        </span>
+        <span class="sidenav-link" *ngIf="!connected">
+          <a mat-button  [routerLink]="['/registration']">Enregistrement</a>
+        </span>
+        <span class="sidenav-link" *ngIf="connected">
+          <a mat-button [routerLink]="['/profile']">Mon profil</a>
+        </span>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar color="primary" class="navbar">
+            <button mat-icon-button (click)="drawer.toggle()" id="drawerToggle-Icon" aria-label="Example icon-button with menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <span class="title">StudCloud</span>
+            <span class="spacer"></span>
+            <span class="navbar-link"><a  mat-button [routerLink]="['/home']">Home</a></span>
+            <span class="navbar-link"><a  mat-button [routerLink]="['/privateTopic']">Private Forum</a></span>
+            <span class="navbar-link">
+              <a [routerLink]="['/registration']">
+                <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son login">
+                  <mat-icon>account_circle</mat-icon>
+                </button>
+              </a>
+            </span>
+          </mat-toolbar>
+          <div class="spacer-content"></div>
+          <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-drawer-content>
+  </mat-drawer-container>

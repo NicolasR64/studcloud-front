@@ -5,6 +5,5 @@ export class Topic{
   Question!: string;
   Created!: Date;
   TopicUserId!: number;
-  User!: User;
-  Comments!: Commentary[];
+  Comments!: Commentary[]|null;
 }

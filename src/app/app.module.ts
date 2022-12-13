@@ -8,23 +8,31 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ToolbarsComponent } from './toolbars/toolbars.component';
+import { HomeComponent } from './home/home.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from  '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    SignInComponent
+    SignInComponent,
+    ToolbarsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,11 @@ import { SignInComponent } from './sign-in/sign-in.component';
     MatCardModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+html, body { min-height: 100%; background-color: #f1f1f1; }
+body { margin: 0; font-family: 'Roboto', "Helvetica Neue", sans-serif; }
+
 .form-row{
     display: flex;
     justify-content: space-between;
@@ -8,8 +11,38 @@
 }
 
 .container{
-    padding: 0 25vw;
+    padding: 5vh 20vw;
+    min-height: 80vh;
+    min-width: auto;
 }
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+mat-card-title{
+    text-transform: uppercase;
+}
+
+mat-card-content{
+    padding: 5px 9px 0px 9px!important;
+}
+
+/* Link */
+
+a{
+    color: unset;
+    text-decoration: unset;
+    font-weight: 500;
+}
+
+/* button */
+button{
+    font-weight: 600;
+}
+
 
 @media screen and (max-width: 1450px) {
     .form-row{
@@ -23,3 +56,6 @@
     }
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
