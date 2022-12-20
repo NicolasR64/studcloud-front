@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Commentary } from '../models/Commentary';
+import { Topic } from '../models/Topic';
 import { User } from '../models/User';
 
 @Component({
@@ -8,6 +9,14 @@ import { User } from '../models/User';
   styleUrls: ['./temp-messages.component.css'],
 })
 export class TempMessagesComponent {
+  // mock topic
+  topic: Topic = {
+    TopicId: 1,
+    Question: 'Comment allez vous?',
+    Created: new Date('2022-12-19T15:40:54'),
+    TopicUserId: 1,
+  };
+
   // mock users
   users: User[] = [
     {

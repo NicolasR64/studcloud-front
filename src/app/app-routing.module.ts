@@ -9,7 +9,7 @@ import { TempMessagesComponent } from './temp-messages/temp-messages.component';
 const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'signIn', component: SignInComponent },
-  { path: 'tempMessages', component: TempMessagesComponent, canActivate: [AuthGuard] },
+  { path: 'topic/:id', component: TempMessagesComponent, canActivate: [AuthGuard] },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: HomeComponent }
   

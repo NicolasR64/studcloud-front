@@ -7,7 +7,7 @@
           <a mat-button [routerLink]="['/home']">Home</a>
         </span>
         <span class="sidenav-link">
-          <a mat-button [routerLink]="['/tempMessages']">Test messages</a>
+          <a mat-button [routerLink]="['/topic', 1]">Test messages</a>
         </span>
         <span class="sidenav-link" *ngIf="!isConnected">
           <a mat-button  [routerLink]="['/registration']">Enregistrement</a>
@@ -28,7 +28,7 @@
             <span class="title">StudCloud</span>
             <span class="spacer"></span>
             <span class="navbar-link"><a  mat-button [routerLink]="['/home']">Home</a></span>
-            <span class="navbar-link"><a  mat-button [routerLink]="['/tempMessages']">Messages Test</a></span>
+            <span class="navbar-link"><a  mat-button [routerLink]="['/topic', 1]">Messages Test</a></span>
             <span class="navbar-link">
               <a *ngIf="!isConnected" [routerLink]="['/registration']">
                 <button mat-icon-button class="buttonNavBar" aria-label="Permet de s'enregistrer ou de se connecter">
