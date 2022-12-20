@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { Topic } from '../models/Topic';
+import { PrivateGroup } from '../models/PrivateGroup';
 import { User } from '../models/User';
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-private-groups',
+  templateUrl: './private-groups.component.html',
+  styleUrls: ['./private-groups.component.css']
 })
-export class HomeComponent{
+export class PrivateGroupsComponent {
   // mock users
   users: User[] = [
     {
@@ -41,19 +42,19 @@ export class HomeComponent{
     },
   ];
 
-  topics: Topic[] = [
+  privateGroups: PrivateGroup[] = [
     {
-      TopicId: 1,
-      Question: 'comment allez vous?',
-      Created: new Date('2022-12-19T15:40:54'),
-      TopicUserId: 1
+      PrivateGroupId: 1,
+      RecipientUser: "nicovoltes",
+      CurrentUserId: 1
     }
   ];
+  
 
-  findUserName(topicUserId: number) {
+  findUserName(currentUserNickname: string) {
     let Nickname: string = '';
     this.users.forEach((user) => {
-      if (user.Id == topicUserId) {
+      if (user.Nickname == currentUserNickname) {
         Nickname = user.Nickname;
       }
     });

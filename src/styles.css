@@ -57,4 +57,10 @@ button{
     }
 }
 
+@media screen and (max-width: 426px){
+    .container{
+        padding: 2vh;
+    }
+}
+
 

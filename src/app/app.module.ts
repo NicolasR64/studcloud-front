@@ -25,6 +25,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { TempMessagesComponent } from './temp-messages/temp-messages.component';
+import { PrivateGroupsComponent } from './private-groups/private-groups.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { TempMessagesComponent } from './temp-messages/temp-messages.component';
     SignInComponent,
     ToolbarsComponent,
     HomeComponent,
-    TempMessagesComponent
+    TempMessagesComponent,
+    PrivateGroupsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+.card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.card-title span{
+    margin-left: 25px;
+}
+
+@media screen and (max-width: 426px){
+    .container{
+        padding: 2vh;
+    }
+}

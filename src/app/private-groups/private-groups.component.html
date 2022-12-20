@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Liste de vos convertation privées :</h2>
+  <mat-card *ngFor="let privateGroup of privateGroups">
+    <a [routerLink]="['/privateMessages', privateGroup.PrivateGroupId]">
+      <mat-card-header>
+        <p class="card-title">
+          <mat-icon style="width: 25px">account_circle</mat-icon>
+          <span>{{ findUserName(privateGroup.RecipientUser) }}</span>
+        </p>
+      </mat-card-header>
+    </a>
+  </mat-card>
+</div>
