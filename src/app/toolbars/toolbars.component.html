@@ -6,6 +6,7 @@
         <span class="sidenav-link">
           <a mat-button [routerLink]="['/home']">Home</a>
         </span>
+        <span class="sidenav-link"><a *ngIf="isConnected" mat-button [routerLink]="['/privateGroups']">Groupes privés</a></span>
         <span class="sidenav-link" *ngIf="!isConnected">
           <a mat-button  [routerLink]="['/registration']">Enregistrement</a>
         </span>
@@ -25,6 +26,7 @@
             <span class="title">StudCloud</span>
             <span class="spacer"></span>
             <span class="navbar-link"><a  mat-button [routerLink]="['/home']">Home</a></span>
+            <span class="navbar-link"><a *ngIf="isConnected" mat-button [routerLink]="['/privateGroups']">Groupes privés</a></span>
             <span class="navbar-link">
               <a *ngIf="!isConnected" [routerLink]="['/registration']">
                 <button mat-icon-button class="buttonNavBar" aria-label="Permet de s'enregistrer ou de se connecter">
