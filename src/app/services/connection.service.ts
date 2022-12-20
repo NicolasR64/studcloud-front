@@ -9,7 +9,8 @@ const API_URL = 'http://localhost:7158/api/TokenWallets';
 })
 export class ConnectionService {
 
-  isLoggedIn: boolean = false;
+  // only for production
+  isLoggedIn: boolean = true;
   
   constructor(private http: HttpClient) { }
 

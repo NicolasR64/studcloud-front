@@ -1,0 +1,9 @@
+mat-card{
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 426px){
+    .container{
+        padding: 2vh;
+    }
+}

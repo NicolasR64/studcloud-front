@@ -1,1 +1,12 @@
-<h1>Message d'un forum public</h1>
+<div class="container">
+  <h1>Message d'un forum public</h1>
+
+  <mat-card *ngFor="let comment of comments">
+    <mat-card-header>
+      <mat-icon mat-card-avatar style="width: 25px">account_circle</mat-icon>
+      <mat-card-title>{{ findUserName(comment.CommentUserId) }}</mat-card-title>
+      <mat-card-subtitle>{{ comment.Created.getFullYear()}}-{{comment.Created.getMonth()}}-{{comment.Created.getDay()}} à {{ comment.Created.getHours() }}:{{ comment.Created.getMinutes()}} </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>{{ comment.Description }}</mat-card-content>
+  </mat-card>
+</div>
