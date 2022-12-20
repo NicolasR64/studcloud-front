@@ -10,7 +10,7 @@ import { ConnectionService } from '../services/connection.service';
 })
 export class SignInComponent implements OnInit {
   hide = true;
-  nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
+  nameRegex = /^[a-zA-Z ]{3,30}$/;
   signInForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private connectionService: ConnectionService) { }
@@ -41,8 +41,9 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.signInForm.value);
-    this.connectionService.CheckUserLogIn(this.signInForm.value.get('password'), this.signInForm.value.get('name'));
+    this.connectionService.CheckUserLogIn(this.signInForm.value.password, this.signInForm.value.name);
+    // use for demonstration cause back-end doesn't work
+    this.connectionService.isLoggedIn = true;
     this.router.navigateByUrl('/home');
   }
 

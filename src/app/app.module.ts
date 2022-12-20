@@ -24,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { TempMessagesComponent } from './temp-messages/temp-messages.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatTableModule } from '@angular/material/table';
     RegistrationComponent,
     SignInComponent,
     ToolbarsComponent,
-    HomeComponent
+    HomeComponent,
+    TempMessagesComponent
   ],
   imports: [
     BrowserModule,

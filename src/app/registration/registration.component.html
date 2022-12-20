@@ -7,19 +7,19 @@
       <mat-card-subtitle>Informations personnel</mat-card-subtitle>
       <div class="form-row">
         <mat-form-field hintLabel="De 2 à 50 caractères" appearance="fill">
-          <mat-label>Nom *</mat-label>
+          <mat-label>Nom</mat-label>
           <input matInput #lastname formControlName="Name" placeholder="Nom"/>
-          <mat-hint align="end" [style]="((lastname.value.length > 50) || (lastname.value.length < 2)) ? 'color: red;' : 'color: unset' ">{{lastname.value.length}}/50</mat-hint>
+          <mat-hint align="end" [style]="((lastname.value.length > 30) || (lastname.value.length < 3)) ? 'color: red;' : 'color: unset' ">{{lastname.value.length}}/30</mat-hint>
         </mat-form-field>
         <mat-form-field hintLabel="De 2 à 50 caractères" appearance="fill">
-          <mat-label>Prénom *</mat-label>
+          <mat-label>Prénom</mat-label>
           <input matInput #firstname formControlName="Firstname" placeholder="Prénom"/>
-          <mat-hint align="end" [style]="((firstname.value.length > 50) || (firstname.value.length < 2)) ? 'color: red;' : 'color: unset' ">{{firstname.value.length}}/50</mat-hint>
+          <mat-hint align="end" [style]="((firstname.value.length > 20) || (firstname.value.length < 3)) ? 'color: red;' : 'color: unset' ">{{firstname.value.length}}/20</mat-hint>
         </mat-form-field>
         <mat-form-field hintLabel="De 2 à 50 caractères" appearance="fill">
-          <mat-label>pseudo *</mat-label>
+          <mat-label>pseudo</mat-label>
           <input matInput #nickname formControlName="Nickname" placeholder="Pseudo"/>
-          <mat-hint align="end" [style]="((nickname.value.length > 50) || (nickname.value.length < 2)) ? 'color: red;' : 'color: unset' ">{{nickname.value.length}}/50</mat-hint>
+          <mat-hint align="end" [style]="((nickname.value.length > 15) || (nickname.value.length < 3)) ? 'color: red;' : 'color: unset' ">{{nickname.value.length}}/15</mat-hint>
         </mat-form-field>
       </div>
       <br>
@@ -36,21 +36,22 @@
     <mat-card>
       <mat-card-subtitle>Mot de passe</mat-card-subtitle>
       <div class="form-row">
-        <mat-form-field hintLabel="De 8 à 50 caractères" appearance="fill">
+        <mat-form-field hintLabel="De 8 à 15 caractères" appearance="fill">
           <mat-label>Mot de passe</mat-label>
           <input matInput #password formControlName="Password"  [type]="hide ? 'password' : 'text'" />
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
-          <mat-hint align="end" [style]="((password.value.length > 50) || (password.value.length < 8)) ? 'color: red;' : 'color: unset' ">{{password.value.length}}/50</mat-hint>
+          <mat-hint align="end" [style]="((password.value.length > 15) || (password.value.length < 8)) ? 'color: red;' : 'color: unset' ">{{password.value.length}}/15</mat-hint>
+          <mat-error>{{ getErrorPassword() }}</mat-error>
         </mat-form-field>
-        <mat-form-field hintLabel="De 8 à 50 caractères" appearance="fill">
+        <mat-form-field hintLabel="De 8 à 15 caractères" appearance="fill">
           <mat-label>Confirmation mot de passe</mat-label>
           <input matInput #confirmationPassword formControlName="ConfirmationPassword"  [type]="hide ? 'password' : 'text'" />
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
-          <mat-hint align="end" [style]="((confirmationPassword.value.length > 50) || (confirmationPassword.value.length < 8)) ? 'color: red;' : 'color: unset' ">{{confirmationPassword.value.length}}/50</mat-hint>
+          <mat-hint align="end" [style]="((confirmationPassword.value.length > 15) || (confirmationPassword.value.length < 8)) ? 'color: red;' : 'color: unset' ">{{confirmationPassword.value.length}}/50</mat-hint>
           <mat-error>{{ getErrorConfirmationPassword() }}</mat-error>
         </mat-form-field>
       </div>
@@ -67,12 +68,15 @@
           <mat-label>Phone</mat-label>
           <input matInput formControlName="Phone" />
           <mat-icon matSuffix>phone</mat-icon>
-          <mat-error>{{ getErrorEmail() }}</mat-error>
+          <mat-error>{{ getErrorPhone() }}</mat-error>
         </mat-form-field>
       </div>
     </mat-card>
     <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()" [disabled]="!registrationForm.valid">Submit</button>
+    <br>
+    <br>
+    <mat-hint>* obligatoire</mat-hint>
   </mat-card>
-  <button mat-button [routerLink]="['/signIn']" color="primary">Déja enregistré? Connecté-vous!</button>
+  <button mat-button color="primary">Déja enregistré? Connecté-vous!</button>
 </div>
 

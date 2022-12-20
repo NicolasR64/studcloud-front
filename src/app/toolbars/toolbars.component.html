@@ -3,12 +3,17 @@
       <div class="sidenav-links-container">
         <span class="title">FreshBread</span>
         <span class="spacer"></span>
-        <span class="sidenav-link"><a mat-button [routerLink]="['/home']">Home</a></span>
-        <span class="sidenav-link" *ngIf="connected">
-          <a mat-button [routerLink]="['/cart  ']">Mes commandes</a>
+        <span class="sidenav-link">
+          <a mat-button [routerLink]="['/home']">Home</a>
+        </span>
+        <span class="sidenav-link">
+          <a mat-button [routerLink]="['/tempMessages']">Test messages</a>
         </span>
         <span class="sidenav-link" *ngIf="!connected">
           <a mat-button  [routerLink]="['/registration']">Enregistrement</a>
+        </span>
+        <span class="sidenav-link" *ngIf="!connected">
+          <a mat-button  [routerLink]="['/signIn']">Connection</a>
         </span>
         <span class="sidenav-link" *ngIf="connected">
           <a mat-button [routerLink]="['/profile']">Mon profil</a>
@@ -23,7 +28,7 @@
             <span class="title">StudCloud</span>
             <span class="spacer"></span>
             <span class="navbar-link"><a  mat-button [routerLink]="['/home']">Home</a></span>
-            <span class="navbar-link"><a  mat-button [routerLink]="['/privateTopic']">Private Forum</a></span>
+            <span class="navbar-link"><a  mat-button [routerLink]="['/tempMessages']">Messages Test</a></span>
             <span class="navbar-link">
               <a [routerLink]="['/registration']">
                 <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son login">
