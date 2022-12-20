@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectionService } from '../services/connection.service';
 
 @Component({
   selector: 'app-toolbars',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbars.component.css']
 })
 export class ToolbarsComponent implements OnInit {
-  connected=false;
-  constructor() { }
+  isConnected = false;
+  constructor(connectionService: ConnectionService) {
+    this.isConnected = connectionService.isLoggedIn;
+   }
 
   ngOnInit(): void {
   }
