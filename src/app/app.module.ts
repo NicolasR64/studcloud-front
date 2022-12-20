@@ -11,6 +11,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ToolbarsComponent } from './toolbars/toolbars.component';
 import { HomeComponent } from './home/home.component';
+import { TempMessagesComponent } from './temp-messages/temp-messages.component';
+import { PrivateGroupsComponent } from './private-groups/private-groups.component';
+import { TempPrivateMessagesComponent } from './temp-private-messages/temp-private-messages.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from  '@angular/material/input';
@@ -24,8 +27,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import { TempMessagesComponent } from './temp-messages/temp-messages.component';
-import { PrivateGroupsComponent } from './private-groups/private-groups.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PrivateGroupsComponent } from './private-groups/private-groups.componen
     ToolbarsComponent,
     HomeComponent,
     TempMessagesComponent,
-    PrivateGroupsComponent
+    PrivateGroupsComponent,
+    TempPrivateMessagesComponent
   ],
   imports: [
     BrowserModule,

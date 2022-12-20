@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Conversation avec : {{  findUserNameByString(privateGroup.RecipientUser) }}</h1>
+    <mat-card *ngFor="let privateMessage of privateMessages">
+      <mat-card-header>
+        <mat-icon mat-card-avatar style="width: 25px">account_circle</mat-icon>
+        <mat-card-title>{{ findUserName(privateMessage.PrivateMessageUserId) }}</mat-card-title>
+        <mat-card-subtitle>{{ privateMessage.Created.getFullYear()}}-{{privateMessage.Created.getMonth()}}-{{privateMessage.Created.getDay()}} à {{ privateMessage.Created.getHours() }}:{{ privateMessage.Created.getMinutes()}} </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>{{ privateMessage.PrivateCommunication }}</mat-card-content>
+    </mat-card>
+  </div>
+  
