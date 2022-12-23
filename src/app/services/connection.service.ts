@@ -16,7 +16,7 @@ export class ConnectionService {
 
   CheckUserLogIn(password : string, name : string): Observable<boolean>{
     this.http.get(`${API_URL}'?password=${password}&login=${name} `).subscribe((res) => {
-      this.isLoggedIn = true;
+      this.isLoggedIn = false;
     });
     return of(false);
   }

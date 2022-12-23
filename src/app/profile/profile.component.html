@@ -1,0 +1,53 @@
+<div class="container">
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>Profile</mat-card-title>
+          </mat-card-header>
+          <mat-card>
+            <mat-card-subtitle>Informations personnel</mat-card-subtitle>
+            <div class="form-row">
+              <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input matInput placeholder="Nom" value="Ravaux"/>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Prénom</mat-label>
+                <input matInput value="Nicolas"/>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>pseudo</mat-label>
+                <input matInput value="Nicovoltes"/>
+              </mat-form-field>
+            </div>
+            <br>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Birthday</mat-label>
+              <input matInput value="04/15/2002">
+            </mat-form-field>
+          </mat-card>
+          <mat-card>
+            <mat-card-subtitle>Informations de contact :</mat-card-subtitle>
+            <div class="form-row">
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput value="nicovoltes64@gmail.com"/>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Phone</mat-label>
+                <input matInput value="0488 45 86 98"/>
+                <mat-icon matSuffix>phone</mat-icon>
+              </mat-form-field>
+            </div>
+          </mat-card>
+          <mat-card>
+            <mat-card-subtitle>Mot de passe</mat-card-subtitle>
+            <mat-card-actions>
+                <button [routerLink]="['/updatePasswd']" mat-stroked-button color="primary">Changer de mot de passe</button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card-actions>
+            <button [routerLink]="['/updatePasswd']" mat-raised-button color="primary">Modifer le profil</button>
+          </mat-card-actions>
+    </mat-card>
+</div>

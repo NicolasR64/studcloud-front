@@ -27,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatTableModule } from '@angular/material/table';
     HomeComponent,
     TempMessagesComponent,
     PrivateGroupsComponent,
-    TempPrivateMessagesComponent
+    TempPrivateMessagesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -35,8 +35,11 @@ export class UserService {
     this.http.post<User>(API_URL, user).subscribe();
   }
 
-  UpdateUser(id: number, user : User): void{
-    console.log('triggered : putUser : ' + user);
+  UpdateUser(id : number, formValue : {  Id: number, Name:  string, Firstname: string, Nickname: string, Password: string, Email: string, Phone: string, Birthday: Date|null, Portefolios: Portefolio[]|null, Topics: Topic[]|null, Comments: Commentary[]|null,   PrivateGroups: PrivateGroup[]|null, PrivateMessages: PrivateMessage[]|null }): void {
+    const user: User = {
+      ...formValue
+    };
+    console.log('triggered: postUser : ' + user);
     this.http.put<User>(API_URL + '/' + id, user).subscribe();;
   }
 
