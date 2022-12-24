@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Topic } from '../models/Topic';
 import { User } from '../models/User';
+import { ConnectionService } from '../services/connection.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { TempMessagesComponent } from './temp-messages/temp-messages.component';
 import { PrivateGroupsComponent } from './private-groups/private-groups.component';
 import { TempPrivateMessagesComponent } from './temp-private-messages/temp-private-messages.component';
+import { ProfileComponent } from './profile/profile.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from  '@angular/material/input';
@@ -27,7 +28,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import { ProfileComponent } from './profile/profile.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { ProfileComponent } from './profile/profile.component';
     MatToolbarModule,
     MatSidenavModule,
     MatPaginatorModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
